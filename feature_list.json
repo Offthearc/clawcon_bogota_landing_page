@@ -22,6 +22,20 @@
       ]
     },
     {
+      "id": "F02",
+      "name": "about_section",
+      "title": "About Section",
+      "status": "done",
+      "description": "Section describing what ClawCon Bogota is — a tabletop gaming convention celebrating board games, card games, RPGs, and miniature gaming in Colombia. Includes a short paragraph and key facts (attendee count, venue, year).",
+      "acceptance": [
+        "Renders a descriptive paragraph about the event",
+        "Displays key stats (e.g. expected attendees, event duration, venue)",
+        "Accessible semantic markup (section, headings)",
+        "Responsive layout",
+        "Uses design tokens"
+      ]
+    },
+    {
       "id": "FDEPLOY",
       "name": "Deploy to Vercel",
       "status": "pending",
