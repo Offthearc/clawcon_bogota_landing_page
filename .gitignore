@@ -31,7 +31,3 @@ pnpm-debug.log*
 
 # Harness scratch
 /tmp/
-
-# Local env
-.env.local
-.env.*.local
