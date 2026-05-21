@@ -79,3 +79,20 @@ All verification commands pass after the fix pass:
 - `npm run typecheck`: no errors
 - `npm run design:check`: tokens in sync, no off-palette values
 - `./init.sh`: environment ready
+
+---
+
+### Token fix pass (2026-05-21)
+
+| Fix | File | Change |
+| --- | ---- | ------ |
+| Replace hardcoded `1px` border-bottom | `src/components/NavBar/NavBar.css` line 7 | Changed `1px` to `var(--border-width-thin)` |
+
+All verification commands pass after the token fix:
+
+- `npx vitest run`: 12/12 tests pass
+- `npm run lint`: no errors
+- `npx prettier --check .`: all files formatted
+- `npm run typecheck`: no errors
+- `npm run design:check`: tokens in sync, no off-palette values
+- `./init.sh`: environment ready
