@@ -53,7 +53,7 @@
       "id": "F04",
       "name": "guests_section",
       "title": "Guests / Featured Games Section",
-      "status": "pending",
+      "status": "done",
       "description": "Section showcasing featured guests, game designers, or highlighted games at the event. Card-based layout with name/title and a placeholder avatar.",
       "acceptance": [
         "Renders at least 3 guest or featured-game cards",

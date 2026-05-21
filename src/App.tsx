@@ -3,6 +3,7 @@ import { NavBar } from './components/NavBar/NavBar'
 import { HeroSection } from './components/HeroSection/HeroSection'
 import { AboutSection } from './components/AboutSection/AboutSection'
 import { ScheduleSection } from './components/ScheduleSection/ScheduleSection'
+import { GuestsSection } from './components/GuestsSection/GuestsSection'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <HeroSection />
       <AboutSection />
       <ScheduleSection />
+      <GuestsSection />
     </>
   )
 }
