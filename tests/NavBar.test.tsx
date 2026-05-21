@@ -28,6 +28,7 @@ describe('NavBar', () => {
     expect(hrefs).toContain('#schedule')
     expect(hrefs).toContain('#guests')
     expect(hrefs).toContain('#register')
+    expect(hrefs).toContain('#footer')
   })
 
   it('renders a hamburger toggle button with accessible label', () => {

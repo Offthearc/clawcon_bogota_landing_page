@@ -13,6 +13,7 @@ const NAV_LINKS: NavLink[] = [
   { label: 'Schedule', href: '#schedule' },
   { label: 'Guests', href: '#guests' },
   { label: 'Register', href: '#register' },
+  { label: 'Contact', href: '#footer' },
 ]
 
 export function NavBar() {

@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  max-width: 1200px;
+  max-width: var(--layout-max-width);
   margin: 0 auto;
   padding: var(--space-md) var(--space-lg);
   gap: var(--space-md);
@@ -50,7 +50,7 @@
 .navbar__hamburger-bar {
   display: block;
   width: 100%;
-  height: 2px;
+  height: var(--border-width-thin);
   background-color: var(--color-on-dark-surface);
   border-radius: var(--rounded-full);
 }
@@ -93,6 +93,8 @@
 
 .navbar__link:hover {
   color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
 }
 
 .navbar__link:focus-visible {
