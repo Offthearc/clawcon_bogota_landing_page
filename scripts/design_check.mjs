@@ -101,6 +101,18 @@ function generateTokensCss(tokens) {
       lines.push(`  --space-${name}: ${value};`)
     }
   }
+  if (tokens['border-width']) {
+    lines.push('  /* border-width */')
+    for (const [name, value] of Object.entries(tokens['border-width'])) {
+      lines.push(`  --border-width-${name}: ${value};`)
+    }
+  }
+  if (tokens.layout) {
+    lines.push('  /* layout */')
+    for (const [name, value] of Object.entries(tokens.layout)) {
+      lines.push(`  --layout-${name}: ${value};`)
+    }
+  }
   lines.push('}')
   return lines.join('\n') + '\n'
 }

@@ -16,6 +16,8 @@ colors:
   border: '#DEE2E6'
   danger: '#E03131'
   success: '#2F9E44'
+  dark-surface: '#0E2A1A'
+  on-dark-surface: '#F5F0E8'
 typography:
   sans:
     fontFamily: 'Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif'
@@ -43,6 +45,10 @@ spacing:
   md: 16px
   lg: 24px
   xl: 40px
+border-width:
+  thin: 1px
+layout:
+  max-width: 72rem
 components:
   button-primary:
     backgroundColor: '{colors.primary}'
@@ -54,6 +60,20 @@ components:
     textColor: '{colors.on-surface}'
     rounded: '{rounded.lg}'
     padding: '{spacing.lg}'
+  navbar:
+    backgroundColor: '{colors.dark-surface}'
+    textColor: '{colors.on-dark-surface}'
+    borderWidth: '{border-width.thin}'
+    maxWidth: '{layout.max-width}'
+  hero:
+    backgroundColor: '{colors.dark-surface}'
+    textColor: '{colors.on-dark-surface}'
+    maxWidth: '{layout.max-width}'
+  footer:
+    backgroundColor: '{colors.dark-surface}'
+    textColor: '{colors.on-dark-surface}'
+    borderWidth: '{border-width.thin}'
+    maxWidth: '{layout.max-width}'
 ---
 
 # Design — Harness Default
@@ -76,8 +96,10 @@ typography over decoration.
 The palette is intentionally small. `primary` carries interactive emphasis;
 `surface` / `on-surface` provide the base reading surface; `surface-variant`
 gives a subtle background separation; `danger` and `success` are reserved for
-state, never decoration. Components reference colors only through the generated
-`--color-*` custom properties — never hardcoded hex.
+state, never decoration. `dark-surface` (`#0E2A1A`, deep forest green) and
+`on-dark-surface` (`#F5F0E8`, warm off-white) are used for dark-background
+sections (hero, navbar, footer). Components reference colors only through the
+generated `--color-*` custom properties — never hardcoded hex.
 
 ## Typography
 
@@ -88,13 +110,16 @@ consistent across components.
 ## Layout
 
 Spacing follows a small scale (`xs`–`xl`). Compose layouts from these steps
-rather than arbitrary pixel values. Content max-width keeps line length
-readable.
+rather than arbitrary pixel values. Content max-width (`72rem` via
+`--layout-max-width`) keeps line length readable and constrains container width
+consistently across hero, navbar, and footer sections.
 
 ## Elevation & Depth
 
-Depth is expressed with subtle borders (`border` color) and minimal shadow.
-Avoid heavy drop shadows; rely on surface contrast and spacing for hierarchy.
+Depth is expressed with subtle borders (`border` color, `--border-width-thin`
+at `1px`) and minimal shadow. Avoid heavy drop shadows; rely on surface
+contrast and spacing for hierarchy. The `--border-width-thin` token is the
+single source of truth for rule lines — never use a bare `1px` literal.
 
 ## Shapes
 
@@ -107,6 +132,12 @@ cards and surfaces, `full` for pills and avatars.
   radius, 12px padding. The default call to action.
 - **card** — `surface` background, `on-surface` text, `lg` radius, `lg`
   padding. The container for grouped content.
+- **navbar** — `dark-surface` background, `on-dark-surface` text, `border-width-thin`
+  bottom border, `layout-max-width` inner container. Sticky, z-index 100.
+- **hero** — `dark-surface` background, `on-dark-surface` text, full viewport
+  height, `layout-max-width` inner container centered.
+- **footer** — `dark-surface` background, `on-dark-surface` text,
+  `border-width-thin` top border, `layout-max-width` inner container.
 
 When a component needs a token that does not exist yet, add it to the front
 matter (and regenerate tokens) rather than hardcoding a value.
