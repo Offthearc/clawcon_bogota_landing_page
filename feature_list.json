@@ -39,7 +39,7 @@
       "id": "F03",
       "name": "schedule_section",
       "title": "Schedule / Activities Section",
-      "status": "pending",
+      "status": "done",
       "description": "Section listing the event schedule or main activities (e.g. Open Gaming, Tournaments, Panels, Cosplay Contest). Uses a card or list layout per day/track.",
       "acceptance": [
         "Displays at least 4 activity/schedule items",
