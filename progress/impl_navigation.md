@@ -84,8 +84,8 @@ All verification commands pass after the fix pass:
 
 ### Token fix pass (2026-05-21)
 
-| Fix | File | Change |
-| --- | ---- | ------ |
+| Fix                                   | File                                      | Change                                      |
+| ------------------------------------- | ----------------------------------------- | ------------------------------------------- |
 | Replace hardcoded `1px` border-bottom | `src/components/NavBar/NavBar.css` line 7 | Changed `1px` to `var(--border-width-thin)` |
 
 All verification commands pass after the token fix:
