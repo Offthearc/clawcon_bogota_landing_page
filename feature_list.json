@@ -81,7 +81,7 @@
       "id": "F06",
       "name": "footer_section",
       "title": "Footer",
-      "status": "pending",
+      "status": "done",
       "description": "Footer with event logo/name, social media links (placeholder hrefs), contact email, and copyright notice.",
       "acceptance": [
         "Displays event name/logo and copyright",
