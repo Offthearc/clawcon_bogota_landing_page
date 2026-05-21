@@ -29,15 +29,15 @@ Expected: all test files report `PASS` with zero failures, zero skipped.
 
 Per-feature expected tests:
 
-| Feature | Test file                         | What it must assert                                                    |
-|---------|-----------------------------------|------------------------------------------------------------------------|
-| F01     | `tests/HeroSection.test.tsx`      | Renders `<h1>` with "ClawCon Bogota"; shows date string and location; CTA button has accessible name "Register Now" and is focusable |
-| F02     | `tests/AboutSection.test.tsx`     | Renders a descriptive paragraph; renders at least 3 stat-fact items with non-empty label and value |
-| F03     | `tests/ScheduleSection.test.tsx`  | Renders at least 4 schedule cards; each card has a title and a non-empty time/day and description |
-| F04     | `tests/GuestsSection.test.tsx`    | Renders at least 3 guest cards; each card has a name heading and a description; avatar has non-empty alt text |
-| F05     | `tests/RegistrationSection.test.tsx` | Renders a headline; CTA button has accessible name and an `href` attribute; button is keyboard-focusable |
-| F06     | `tests/FooterSection.test.tsx`    | Renders `<footer>` landmark; contains a `mailto:` link; social links have accessible labels; copyright text is present |
-| F07     | `tests/NavBar.test.tsx`           | Renders `<nav>` with `aria-label`; all section anchor links are present; hamburger button toggles menu visibility; `aria-expanded` changes correctly on toggle |
+| Feature | Test file                            | What it must assert                                                                                                                                            |
+| ------- | ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| F01     | `tests/HeroSection.test.tsx`         | Renders `<h1>` with "ClawCon Bogota"; shows date string and location; CTA button has accessible name "Register Now" and is focusable                           |
+| F02     | `tests/AboutSection.test.tsx`        | Renders a descriptive paragraph; renders at least 3 stat-fact items with non-empty label and value                                                             |
+| F03     | `tests/ScheduleSection.test.tsx`     | Renders at least 4 schedule cards; each card has a title and a non-empty time/day and description                                                              |
+| F04     | `tests/GuestsSection.test.tsx`       | Renders at least 3 guest cards; each card has a name heading and a description; avatar has non-empty alt text                                                  |
+| F05     | `tests/RegistrationSection.test.tsx` | Renders a headline; CTA button has accessible name and an `href` attribute; button is keyboard-focusable                                                       |
+| F06     | `tests/FooterSection.test.tsx`       | Renders `<footer>` landmark; contains a `mailto:` link; social links have accessible labels; copyright text is present                                         |
+| F07     | `tests/NavBar.test.tsx`              | Renders `<nav>` with `aria-label`; all section anchor links are present; hamburger button toggles menu visibility; `aria-expanded` changes correctly on toggle |
 
 ### Level 2 — Static checks (mandatory)
 
@@ -46,16 +46,19 @@ Run each command and confirm zero errors:
 ```bash
 npm run lint
 ```
+
 Expected: no ESLint warnings or errors reported.
 
 ```bash
 npx prettier --check .
 ```
+
 Expected: `All matched files use Prettier code style!`
 
 ```bash
 npm run typecheck
 ```
+
 Expected: `tsc` exits 0 with no output (no type errors).
 
 ### Level 3 — Design conformance (mandatory for every UI feature)
@@ -63,6 +66,7 @@ Expected: `tsc` exits 0 with no output (no type errors).
 ```bash
 npm run design:check
 ```
+
 Expected: exits 0. Any failure means a component is using a hardcoded color,
 off-token spacing, or a font family not declared in `DESIGN.md`. Fix by adding
 the missing token via the designer, then re-run.
@@ -72,6 +76,7 @@ the missing token via the designer, then re-run.
 ```bash
 npm run build
 ```
+
 Expected: Vite emits `dist/` with no TS errors, no rollup warnings about
 missing modules, and a reasonable bundle size (index JS < 200 kB uncompressed
 is a good heuristic for this site).
@@ -106,6 +111,7 @@ Checklist:
 ```bash
 npx vitest run --reporter verbose tests/HeroSection.test.tsx
 ```
+
 Expected: all tests pass; specifically `renders event name as h1` and
 `CTA button is keyboard-focusable`.
 
@@ -114,6 +120,7 @@ Expected: all tests pass; specifically `renders event name as h1` and
 ```bash
 npx vitest run --reporter verbose tests/AboutSection.test.tsx
 ```
+
 Expected: all tests pass; specifically `renders at least 3 stat facts`.
 
 ### FR-3: Schedule Section
@@ -121,6 +128,7 @@ Expected: all tests pass; specifically `renders at least 3 stat facts`.
 ```bash
 npx vitest run --reporter verbose tests/ScheduleSection.test.tsx
 ```
+
 Expected: all tests pass; specifically `renders at least 4 schedule items`.
 
 ### FR-4: Guests Section
@@ -128,6 +136,7 @@ Expected: all tests pass; specifically `renders at least 4 schedule items`.
 ```bash
 npx vitest run --reporter verbose tests/GuestsSection.test.tsx
 ```
+
 Expected: all tests pass; specifically `each card has accessible avatar alt text`.
 
 ### FR-5: Registration CTA Section
@@ -135,6 +144,7 @@ Expected: all tests pass; specifically `each card has accessible avatar alt text
 ```bash
 npx vitest run --reporter verbose tests/RegistrationSection.test.tsx
 ```
+
 Expected: all tests pass; specifically `CTA button has an href`.
 
 ### FR-6: Footer
@@ -142,6 +152,7 @@ Expected: all tests pass; specifically `CTA button has an href`.
 ```bash
 npx vitest run --reporter verbose tests/FooterSection.test.tsx
 ```
+
 Expected: all tests pass; specifically `footer landmark is present` and
 `contact email link exists`.
 
@@ -150,6 +161,7 @@ Expected: all tests pass; specifically `footer landmark is present` and
 ```bash
 npx vitest run --reporter verbose tests/NavBar.test.tsx
 ```
+
 Expected: all tests pass; specifically `aria-expanded toggles on hamburger click`
 and `all section links are in the DOM`.
 
@@ -192,14 +204,14 @@ Expected: zero violations in every component.
 
 ## Edge cases and failure modes
 
-| Scenario                                  | Expected behavior                                                    |
-|-------------------------------------------|----------------------------------------------------------------------|
-| Viewport < 320 px                         | No horizontal overflow; content reflows or is capped at 320 px min  |
-| Long guest name (> 30 chars)              | Card text wraps; layout does not break                               |
-| Social link `href` is `#`                 | Renders as a valid anchor; does not navigate away                    |
-| JavaScript disabled                       | Static HTML content is still readable (no JS-gated content)          |
-| `prefers-reduced-motion: reduce` active   | Smooth scroll disabled; no jarring animations                        |
-| Hamburger menu open, user tabs to section | Focus remains accessible inside menu; Escape closes and refocuses    |
+| Scenario                                  | Expected behavior                                                  |
+| ----------------------------------------- | ------------------------------------------------------------------ |
+| Viewport < 320 px                         | No horizontal overflow; content reflows or is capped at 320 px min |
+| Long guest name (> 30 chars)              | Card text wraps; layout does not break                             |
+| Social link `href` is `#`                 | Renders as a valid anchor; does not navigate away                  |
+| JavaScript disabled                       | Static HTML content is still readable (no JS-gated content)        |
+| `prefers-reduced-motion: reduce` active   | Smooth scroll disabled; no jarring animations                      |
+| Hamburger menu open, user tabs to section | Focus remains accessible inside menu; Escape closes and refocuses  |
 
 ---
 
@@ -212,6 +224,7 @@ npx lighthouse http://localhost:4173 --only-categories=performance,accessibility
 ```
 
 Pass thresholds:
+
 - Performance score >= 90
 - Accessibility score = 100
 

@@ -17,6 +17,7 @@ without resorting to generic "gamer dark" purple/black cliches.
 ## Token summary
 
 ### Palette (13 color tokens)
+
 - `primary` #1B6B3A — emerald green (brand, buttons, active states)
 - `on-primary` #FFFFFF
 - `primary-dark` #134E2B — hover/active + avatar fill
@@ -32,6 +33,7 @@ without resorting to generic "gamer dark" purple/black cliches.
 - `danger` / `success` — state-only, not decorative
 
 ### Type scale (7 typography tokens)
+
 - `display` — Bebas Neue 72px, line-height 1.0 — hero event title
 - `heading` — Playfair Display 36px bold — section headings
 - `subheading` — Playfair Display 24px semi-bold
@@ -45,7 +47,9 @@ without resorting to generic "gamer dark" purple/black cliches.
 ### Rounded scale (6 steps): none 0 → sm 4px → md 8px → lg 16px → xl 24px → full 9999px
 
 ### Components (13 tokens)
+
 All 7 feature-list UI surfaces are covered:
+
 - `nav` (F07 NavBar)
 - `hero` (F01 HeroSection)
 - `section-light`, `section-tinted`, `section-dark` (F02 About, F03 Schedule, F05 Registration)
@@ -57,9 +61,11 @@ All 7 feature-list UI surfaces are covered:
 - `footer` (F06 Footer)
 
 ## Generated file
+
 `src/theme/tokens.css` — regenerated and verified in sync.
 
 ## Assumptions
+
 - Google Fonts imports (Bebas Neue, Playfair Display, Inter) will be added
   by the implementer in `index.html` or `index.css` — the font names are
   declared as token values so `design_check.mjs` will allow them.
@@ -68,5 +74,6 @@ All 7 feature-list UI surfaces are covered:
   implementer should add this alongside their global resets.
 
 ## Open questions
+
 - None blocking. Event dates (August 2026), venue, and guest names are static
   content owned by the implementer — no design decision required.

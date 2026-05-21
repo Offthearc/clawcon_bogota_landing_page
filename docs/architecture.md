@@ -13,6 +13,7 @@ to Vercel, with no server-side logic and no external data fetching.
 **Type:** MVP
 
 **In scope:**
+
 - Seven page sections: Navigation, Hero, About, Schedule/Activities,
   Guests/Featured Games, Registration CTA, Footer (F01–F07)
 - Responsive layout: mobile-first CSS, breakpoints at 640 px (sm) and 1024 px (lg)
@@ -24,6 +25,7 @@ to Vercel, with no server-side logic and no external data fetching.
 - Vercel deployment (FDEPLOY)
 
 **Out of scope:**
+
 - Server-side rendering (no Next.js or Remix)
 - Authentication or user accounts
 - A real ticketing/payment integration (CTA button links to a placeholder URL)
@@ -35,6 +37,7 @@ to Vercel, with no server-side logic and no external data fetching.
 - Multiple pages or client-side routing
 
 **Assumptions:**
+
 - All event content (dates, venue, guest names, schedule items) is static and
   can be hardcoded; no data fetching layer is needed.
 - The designer will update `DESIGN.md` with a bold, vibrant palette (Latin
@@ -73,15 +76,15 @@ Traceable to `feature_list.json` IDs.
 
 ## 4. Non-functional requirements
 
-| Attribute       | Target                                        | Rationale                                    | Priority |
-|-----------------|-----------------------------------------------|----------------------------------------------|----------|
-| Performance     | Lighthouse performance >= 90 on mobile        | Single static page; no excuse for slowness  | must     |
-| Accessibility   | Zero axe-core violations in automated scan    | Legal baseline; broad audience               | must     |
-| Responsiveness  | Usable at 320 px – 1440 px viewport widths    | Most Colombian mobile users on small screens | must     |
-| Maintainability | All colors/spacing via design tokens; no magic values | Tokens enforced by `design:check` gate | must     |
-| Test coverage   | One test per component covering the happy path | Reviewer gate requires green `./init.sh`    | must     |
-| Build           | `npm run build` produces zero TS/lint errors  | Vercel deploy gate                           | must     |
-| Bundle size     | No unneeded runtime dependencies              | Marketing page; only React is justified      | should   |
+| Attribute       | Target                                                | Rationale                                    | Priority |
+| --------------- | ----------------------------------------------------- | -------------------------------------------- | -------- |
+| Performance     | Lighthouse performance >= 90 on mobile                | Single static page; no excuse for slowness   | must     |
+| Accessibility   | Zero axe-core violations in automated scan            | Legal baseline; broad audience               | must     |
+| Responsiveness  | Usable at 320 px – 1440 px viewport widths            | Most Colombian mobile users on small screens | must     |
+| Maintainability | All colors/spacing via design tokens; no magic values | Tokens enforced by `design:check` gate       | must     |
+| Test coverage   | One test per component covering the happy path        | Reviewer gate requires green `./init.sh`     | must     |
+| Build           | `npm run build` produces zero TS/lint errors          | Vercel deploy gate                           | must     |
+| Bundle size     | No unneeded runtime dependencies                      | Marketing page; only React is justified      | should   |
 
 ## 5. System context
 
@@ -186,17 +189,17 @@ flowchart TD
 Every section receives a semantic landmark and a unique `id` used for anchor
 navigation:
 
-| Element              | id / aria attribute     | Landmark role  |
-|----------------------|-------------------------|----------------|
-| `<header>`           | —                       | `banner`       |
-| `<nav>`              | `aria-label="Main"`     | `navigation`   |
-| `<main>`             | —                       | `main`         |
-| `<section id="hero">`| `aria-labelledby`       | region         |
-| `<section id="about">` | `aria-labelledby`     | region         |
-| `<section id="schedule">` | `aria-labelledby` | region         |
-| `<section id="guests">` | `aria-labelledby`    | region         |
-| `<section id="register">` | `aria-labelledby` | region         |
-| `<footer>`           | —                       | `contentinfo`  |
+| Element                   | id / aria attribute | Landmark role |
+| ------------------------- | ------------------- | ------------- |
+| `<header>`                | —                   | `banner`      |
+| `<nav>`                   | `aria-label="Main"` | `navigation`  |
+| `<main>`                  | —                   | `main`        |
+| `<section id="hero">`     | `aria-labelledby`   | region        |
+| `<section id="about">`    | `aria-labelledby`   | region        |
+| `<section id="schedule">` | `aria-labelledby`   | region        |
+| `<section id="guests">`   | `aria-labelledby`   | region        |
+| `<section id="register">` | `aria-labelledby`   | region        |
+| `<footer>`                | —                   | `contentinfo` |
 
 Each `<section>` must have a visible heading (`<h2>`) that the
 `aria-labelledby` references, making the landmark self-describing for screen
@@ -242,15 +245,15 @@ with real content without touching component logic.
 
 ## 8. Technology decisions
 
-| Decision                  | Chosen option               | Alternatives considered          | Rationale                                                   |
-|---------------------------|-----------------------------|----------------------------------|-------------------------------------------------------------|
-| Build tool                | Vite 6                      | CRA, Parcel                      | Already in scaffold; fast HMR, native ESM                   |
-| UI framework              | React 19 + TypeScript strict | Vue, Svelte                     | Already in scaffold; team familiarity assumed               |
-| Styling                   | Plain CSS Modules co-located | Tailwind, styled-components      | No new runtime dep; tokens enforced by design:check        |
-| Test runner               | Vitest + RTL                | Jest                             | Already in scaffold; native Vite integration               |
-| Routing                   | None (anchor links)         | React Router                     | Single page; no client-side route changes needed           |
-| State management          | useState / custom hook      | Zustand, Redux                   | Only one stateful UI element (hamburger); no store needed  |
-| Deployment                | Vercel                      | Netlify, GitHub Pages            | Specified by project; zero-config for Vite                  |
+| Decision         | Chosen option                | Alternatives considered     | Rationale                                                 |
+| ---------------- | ---------------------------- | --------------------------- | --------------------------------------------------------- |
+| Build tool       | Vite 6                       | CRA, Parcel                 | Already in scaffold; fast HMR, native ESM                 |
+| UI framework     | React 19 + TypeScript strict | Vue, Svelte                 | Already in scaffold; team familiarity assumed             |
+| Styling          | Plain CSS Modules co-located | Tailwind, styled-components | No new runtime dep; tokens enforced by design:check       |
+| Test runner      | Vitest + RTL                 | Jest                        | Already in scaffold; native Vite integration              |
+| Routing          | None (anchor links)          | React Router                | Single page; no client-side route changes needed          |
+| State management | useState / custom hook       | Zustand, Redux              | Only one stateful UI element (hamburger); no store needed |
+| Deployment       | Vercel                       | Netlify, GitHub Pages       | Specified by project; zero-config for Vite                |
 
 ## 9. Risks and trade-offs
 

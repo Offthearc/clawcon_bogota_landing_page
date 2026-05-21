@@ -103,7 +103,7 @@
         "Accessible (nav landmark, aria-label, keyboard focus)",
         "Uses design tokens"
       ],
-      "status": "pending"
+      "status": "done"
     },
     {
       "id": "FDEPLOY",

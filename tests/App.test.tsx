@@ -3,10 +3,15 @@ import { describe, expect, it } from 'vitest'
 import App from '../src/App'
 
 describe('App', () => {
-  it('renders the heading', () => {
+  it('renders the navigation bar', () => {
     render(<App />)
     expect(
-      screen.getByRole('heading', { name: /harness react/i }),
+      screen.getByRole('navigation', { name: /main/i }),
     ).toBeInTheDocument()
+  })
+
+  it('renders a main landmark', () => {
+    render(<App />)
+    expect(screen.getByRole('main')).toBeInTheDocument()
   })
 })
