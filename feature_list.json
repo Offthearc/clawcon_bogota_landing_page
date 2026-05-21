@@ -36,6 +36,62 @@
       ]
     },
     {
+      "id": "F03",
+      "name": "schedule_section",
+      "title": "Schedule / Activities Section",
+      "status": "pending",
+      "description": "Section listing the event schedule or main activities (e.g. Open Gaming, Tournaments, Panels, Cosplay Contest). Uses a card or list layout per day/track.",
+      "acceptance": [
+        "Displays at least 4 activity/schedule items",
+        "Each item has a title, time/day, and short description",
+        "Accessible list or grid markup",
+        "Responsive on mobile (stacked) and desktop (grid)",
+        "Uses design tokens"
+      ]
+    },
+    {
+      "id": "F04",
+      "name": "guests_section",
+      "title": "Guests / Featured Games Section",
+      "status": "pending",
+      "description": "Section showcasing featured guests, game designers, or highlighted games at the event. Card-based layout with name/title and a placeholder avatar.",
+      "acceptance": [
+        "Renders at least 3 guest or featured-game cards",
+        "Each card has name, role/description, and an avatar placeholder",
+        "Accessible markup (headings, alt text)",
+        "Responsive grid",
+        "Uses design tokens"
+      ]
+    },
+    {
+      "id": "F05",
+      "name": "registration_cta_section",
+      "title": "Registration / CTA Section",
+      "status": "pending",
+      "description": "Dedicated section prompting visitors to register or buy tickets. Includes a headline, short supporting text, and a prominent CTA button.",
+      "acceptance": [
+        "Contains a clear headline and supporting copy",
+        "CTA button links to an anchor or placeholder URL",
+        "Accessible and keyboard-navigable",
+        "Visually distinct from other sections (contrast background)",
+        "Uses design tokens"
+      ]
+    },
+    {
+      "id": "F06",
+      "name": "footer_section",
+      "title": "Footer",
+      "status": "pending",
+      "description": "Footer with event logo/name, social media links (placeholder hrefs), contact email, and copyright notice.",
+      "acceptance": [
+        "Displays event name/logo and copyright",
+        "Contains social media link placeholders (accessible labels)",
+        "Contains a contact email link",
+        "Accessible landmark markup (footer element)",
+        "Uses design tokens"
+      ]
+    },
+    {
       "id": "FDEPLOY",
       "name": "Deploy to Vercel",
       "status": "pending",
