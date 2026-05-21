@@ -67,7 +67,7 @@
       "id": "F05",
       "name": "registration_cta_section",
       "title": "Registration / CTA Section",
-      "status": "pending",
+      "status": "done",
       "description": "Dedicated section prompting visitors to register or buy tickets. Includes a headline, short supporting text, and a prominent CTA button.",
       "acceptance": [
         "Contains a clear headline and supporting copy",

@@ -4,6 +4,7 @@ import { HeroSection } from './components/HeroSection/HeroSection'
 import { AboutSection } from './components/AboutSection/AboutSection'
 import { ScheduleSection } from './components/ScheduleSection/ScheduleSection'
 import { GuestsSection } from './components/GuestsSection/GuestsSection'
+import { RegistrationSection } from './components/RegistrationSection/RegistrationSection'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <AboutSection />
       <ScheduleSection />
       <GuestsSection />
+      <RegistrationSection />
     </>
   )
 }
