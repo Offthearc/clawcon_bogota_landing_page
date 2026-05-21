@@ -3,3 +3,4 @@ dist
 package-lock.json
 src/theme/tokens.css
 .claude/settings.local.json
+progress/
